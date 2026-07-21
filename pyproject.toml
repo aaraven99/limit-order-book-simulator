@@ -1,0 +1,16 @@
+[build-system]
+requires=["setuptools>=69"]
+build-backend="setuptools.build_meta"
+[project]
+name="limit-order-book-simulator"
+version="0.1.0"
+requires-python=">=3.12"
+dependencies=["flask>=3.1,<4"]
+[project.scripts]
+lob-simulator="lob_simulator.api:main"
+[tool.setuptools.packages.find]
+where=["src"]
+[tool.pytest.ini_options]
+pythonpath=["src"]
+[tool.ruff]
+line-length=100
