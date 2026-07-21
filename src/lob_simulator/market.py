@@ -1,4 +1,5 @@
 """Read a real top-of-book quote without claiming exchange depth."""
+
 from __future__ import annotations
 
 import json
@@ -31,10 +32,21 @@ def latest_quote(ticker: str) -> dict[str, object]:
         try:
             with urlopen(request, timeout=10) as response:  # nosec B310
                 quote = json.load(response)["quote"]
-            return {"symbol": symbol, "bid": quote["bp"], "ask": quote["ap"], "timestamp": quote["t"], "source": "alpaca-iex"}
+            return {
+                "symbol": symbol,
+                "bid": quote["bp"],
+                "ask": quote["ap"],
+                "timestamp": quote["t"],
+                "source": "alpaca-iex",
+            }
         except Exception as error:
             raise RuntimeError(f"Alpaca quote unavailable: {error}") from error
     bars = yf.Ticker(symbol).history(period="1d", interval="1m", prepost=True)
     if bars.empty:
         raise RuntimeError("No current quote returned by yfinance")
-    return {"symbol": symbol, "last": float(bars["Close"].iloc[-1]), "timestamp": bars.index[-1].isoformat(), "source": "yfinance-last-trade"}
+    return {
+        "symbol": symbol,
+        "last": float(bars["Close"].iloc[-1]),
+        "timestamp": bars.index[-1].isoformat(),
+        "source": "yfinance-last-trade",
+    }
