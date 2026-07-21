@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 
 from .book import LimitOrderBook, Order
+from .market import latest_quote
 
 app, book = Flask(__name__), LimitOrderBook()
 
@@ -33,6 +34,14 @@ def snapshot():
 @app.get("/trades")
 def trades():
     return jsonify(book.trades)
+
+
+@app.get("/market/<ticker>")
+def market(ticker: str):
+    try:
+        return jsonify(latest_quote(ticker))
+    except RuntimeError as error:
+        return jsonify({"error": str(error)}), 503
 
 
 def main() -> None:
