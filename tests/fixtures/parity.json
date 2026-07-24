@@ -1,0 +1,12 @@
+{
+  "actions": [
+    { "side": "sell", "quantity": 3, "price": 101, "orderId": "ask-late" },
+    { "side": "sell", "quantity": 4, "price": 100, "orderId": "ask-best" },
+    { "side": "buy", "quantity": 5, "price": 102, "orderId": "sweep" }
+  ],
+  "expectedTrades": [
+    { "price": 100, "quantity": 4, "maker": "ask-best", "taker": "sweep" },
+    { "price": 101, "quantity": 1, "maker": "ask-late", "taker": "sweep" }
+  ],
+  "expectedAsk": { "price": 101, "remaining": 2, "orderId": "ask-late" }
+}

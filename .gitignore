@@ -5,3 +5,12 @@ __pycache__/
 .ruff_cache/
 *.pyc
 *.egg-info/
+.next/
+node_modules/
+.vercel/
+.tmp-tests/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+.vercel

@@ -1,5 +1,7 @@
 # Limit Order Book Simulator
 
+[Live dashboard](https://limit-order-book-simulator-tau.vercel.app)
+
 ![Generated order-book depth demonstration](assets/portfolio-preview.png)
 
 A deterministic price-time-priority matching engine with a Flask API and an optional real Alpaca IEX top-quote endpoint.
