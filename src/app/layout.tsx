@@ -1,3 +1,3 @@
 import type {Metadata} from "next";import "./globals.css";
-export const metadata:Metadata={title:"Exchange Simulator | Aarav Shah",description:"Browser-isolated price-time-priority limit order book and exchange simulator.",openGraph:{title:"Exchange Simulator",description:"Submit, match, and cancel orders in a deterministic local exchange.",type:"website"}};
+export const metadata:Metadata={title:"Market Microstructure Monitor | Aarav Shah",description:"Real provider-reported intraday OHLCV monitoring with no generated depth or fills.",openGraph:{title:"Market Microstructure Monitor",description:"Inspect real intraday market bars without synthetic fallback data.",type:"website"}};
 export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

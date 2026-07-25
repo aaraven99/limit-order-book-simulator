@@ -1,1 +1,1 @@
-import {ExchangeSimulator} from "../features/exchange-simulator";export default function Page(){return <ExchangeSimulator/>}
+import {LiveMarketMonitor} from "../features/live-market-monitor";export default function Page(){return <LiveMarketMonitor/>}

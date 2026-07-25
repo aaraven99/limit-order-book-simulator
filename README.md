@@ -2,6 +2,8 @@
 
 [Live dashboard](https://limit-order-book-simulator-tau.vercel.app)
 
+The hosted dashboard is now a real-data-only market microstructure monitor. It displays provider-reported one-minute OHLCV bars and explicitly does not fabricate Level 2 depth, quotes, or fills. Genuine depth requires a licensed venue or broker feed and server-side credentials.
+
 ![Generated order-book depth demonstration](assets/portfolio-preview.png)
 
 A deterministic price-time-priority matching engine with a Flask API and an optional real Alpaca IEX top-quote endpoint.
